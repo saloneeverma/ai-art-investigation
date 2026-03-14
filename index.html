@@ -5,7 +5,7 @@
   <title>Is AI Art "Real" Art?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+ 
   <style>
     body {
         font-family: 'DM Mono', monospace;
@@ -14,21 +14,21 @@
         margin: 0;
         padding: 0;
     }
-
+ 
     h1, h2 {
         font-family: 'DM Serif Display', serif;
         font-weight: normal;
     }
-
+ 
     a {
         color:#d6c7c8;
         text-decoration: none;
     }
-
+ 
     a:hover {
         text-decoration: wavy;
     }
-
+ 
     /*nav bar styles*/
     nav{
         display: flex;
@@ -38,24 +38,24 @@
         background-color:black;
         border-bottom: 1px solid #ddd;
     }
-
+ 
     nav a {
         font-size: 12px;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         color: #d6c7c8;
     }
-
+ 
     nav a:hover {
         text-decoration: wavy;
     }
-
+ 
     .page-content {
         max-width: 900px;
         margin: 0 auto;
         padding: 40px 40px;
     }
-
+ 
     /*home page style stuff*/
     .big-header {
         text-align: center;
@@ -80,7 +80,7 @@
       color: #d6c7c8;
       margin: 0;
     }
-
+ 
     .section-label {
       font-size: 11px;
       text-transform: uppercase;
@@ -88,13 +88,96 @@
       color: #888;
       margin-bottom: 16px;
     }
-
-
-
-
-
+ 
+    /*trying to make cards for the home page instead of links*/
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background-color: #470408;
+      border: 12px solid #470408;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+ 
+    .card {
+        background-color: #210204;
+        padding: 32px 28px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+ 
+    .card:hover {
+        background-color: black;
+    }
+ 
+    .card-number {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #d6c7c8;
+    }
+ 
+    .card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+    }
+ 
+    .card-arrow {
+      font-size: 12px;
+      color: #d6c7c8;
+      margin-top: 24px;
+    }
+ 
+    /*art sections info*/
+    .back-link {
+      display: inline-block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 32px;
+    }
+ 
+    .section-header {
+      border-bottom: 1px solid #d6c7c8;
+      padding-bottom: 20px;
+      margin-bottom: 32px;
+    }
+ 
+    .section-header .section-num {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #d6c7c8;
+      margin: 0 0 6px;
+    }
+ 
+    .section-header h1 {
+      font-size: 40px;
+      margin: 0;
+    }
+ 
+    /*the actual sections of the sections*/
+    .section-block {
+      border-top: 1px solid #210204;
+      padding: 32px 0;
+    }
+ 
+    .section-block h2 {
+      font-size: 28px;
+      margin: 0 0 16px;
+    }
+ 
+    .section-block p {
+      font-size: 13px;
+      color: #d6c7c8;
+      margin: 0;
+    }
   </style>
-
+ 
 </head>
 <body>
     <nav>
@@ -103,70 +186,116 @@
         <a href="#" onclick="showPage('visual')">Visual Art</a> |
         <a href="#" onclick="showPage('music')">Music</a>
     </nav>
-
+ 
     <hr>
-
+ 
+    <!-- HOME PAGE -->
     <div id="page-home">
         <div class="page-content">
             <div class="big-header">
                 <h1>Is AI Art "Real" Art?</h1>
                 <p>An exploration of AI-generated poetry, visual art, and music, through the lens of budding computer scientists and lovers of art.</p>
             </div>
-
+ 
             <p class="section-label">Explore our three kinds of art.</p>
-
-
-        <div>
-        <ul>
-            <li><ahref="#" onclick="showPage('poetry')">Poetry</a></li>
-            <li><ahref="#" onclick="showPage('visual')">Visual Art</a></li>
-            <li><ahref="#" onclick="showPage('music')">Music</a></li>
-        </ul>
+ 
+            <div class="card-grid">
+                <div class="card" onclick="showPage('poetry')">
+                    <span class="card-number">Section 01</span>
+                    <span class="card-title">Poetry</span>
+                    <span class="card-arrow">Explore →</span>
+                </div>
+                <div class="card" onclick="showPage('visual')">
+                    <span class="card-number">Section 02</span>
+                    <span class="card-title">Visual Art</span>
+                    <span class="card-arrow">Explore →</span>
+                </div>
+                <div class="card" onclick="showPage('music')">
+                    <span class="card-number">Section 03</span>
+                    <span class="card-title">Music</span>
+                    <span class="card-arrow">Explore →</span>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!--poetry page-->
+    <!-- END OF HOME PAGE -->
+ 
+    <!-- POETRY PAGE -->
     <div id="page-poetry" style="display:none">
-        <a href="#" onclick="showPage('home')">Back to Home</a>
-        <h1>Poetry</h1>
-        <h2>Q&A</h2>
-        <p>Content placeholder</p>
-        <h2>Interview Info</h2>
-        <p>Content placeholder</p>
-        <h2>Demo</h2>
-        <p>Content placeholder</p>
+        <div class="page-content">
+            <a class="back-link" href="#" onclick="showPage('home')">← Back</a>
+            <div class="section-header">
+                <p class="section-num">Section 01</p>
+                <h1>Poetry</h1>
+            </div>
+            <div class="section-block">
+                <h2>Q&A</h2>
+                <p>Content placeholder</p>
+            </div>
+            <div class="section-block">
+                <h2>Interview Info</h2>
+                <p>Content placeholder</p>
+            </div>
+            <div class="section-block">
+                <h2>Demo</h2>
+                <p>Content placeholder</p>
+            </div>
+        </div>
     </div>
-
-    <!--visual art page-->
+ 
+    <!-- VISUAL ART PAGE -->
     <div id="page-visual" style="display:none">
-        <a href="#" onclick="showPage('home')">Back to Home</a>
-        <h1>Visual Art</h1>
-        <h2>Q&A</h2>
-        <p>Content placeholder</p>
-        <h2>Interview Info</h2>
-        <p>Content placeholder</p>
-        <h2>Demo</h2>
-        <p>Content placeholder</p>
+        <div class="page-content">
+            <a class="back-link" href="#" onclick="showPage('home')">← Back</a>
+            <div class="section-header">
+                <p class="section-num">Section 02</p>
+                <h1>Visual Art</h1>
+            </div>
+            <div class="section-block">
+                <h2>Q&A</h2>
+                <p>Content placeholder</p>
+            </div>
+            <div class="section-block">
+                <h2>Interview Info</h2>
+                <p>Content placeholder</p>
+            </div>
+            <div class="section-block">
+                <h2>Demo</h2>
+                <p>Content placeholder</p>
+            </div>
+        </div>
     </div>
-
-    <!--music page-->
+ 
+    <!-- MUSIC PAGE -->
     <div id="page-music" style="display:none">
-        <a href="#" onclick="showPage('home')">Back to Home</a>
-        <h1>Music</h1>
-        <h2>Q&A</h2>
-        <p>Content placeholder</p>
-        <h2>Interview Info</h2>
-        <p>Content placeholder</p>
-        <h2>Demo</h2>
-        <p>Content placeholder</p>
+        <div class="page-content">
+            <a class="back-link" href="#" onclick="showPage('home')">← Back</a>
+            <div class="section-header">
+                <p class="section-num">Section 03</p>
+                <h1>Music</h1>
+            </div>
+            <div class="section-block">
+                <h2>Q&A</h2>
+                <p>Content placeholder</p>
+            </div>
+            <div class="section-block">
+                <h2>Interview Info</h2>
+                <p>Content placeholder</p>
+            </div>
+            <div class="section-block">
+                <h2>Demo</h2>
+                <p>Content placeholder</p>
+            </div>
+        </div>
     </div>
-
+ 
     <script>
         function showPage(id) {
             document.querySelectorAll('div[id^="page-"]').forEach(p => p.style.display = 'none');
             document.getElementById('page-' + id).style.display = 'block';
         }
     </script>
-
-
+ 
 </body>
 </html>
+ 

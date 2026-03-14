@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Is AI Art "Real" Art?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a> |
+        <a href="#" onclick="showPage('poetry')">Poetry</a> |
+        <a href="#" onclick="showPage('visual')">Visual Art</a> |
+        <a href="#" onclick="showPage('music')">Music</a>
+    </nav>
+
+    <hr>
+
+    <div id="page-home">
+        <h1>Is AI Art "Real" Art?</h1>
+        <p>An exploration of AI-generated poetry, visual art, and music, through the lens of budding computer scientists and lovers of art.</p>
+        <ul>
+            <li><ahref="#" onclick="showPage('poetry')">Poetry</a></li>
+            <li><ahref="#" onclick="showPage('visual')">Visual Art</a></li>
+            <li><ahref="#" onclick="showPage('music')">Music</a></li>
+        </ul>
+    </div>
+
+    <!--poetry page-->
+    <div id="page-poetry" style="display:none">
+        <a href="#" onclick="showPage('home')">Back to Home</a>
+        <h1>Poetry</h1>
+        <h2>Q&A</h2>
+        <p>Content placeholder</p>
+        <h2>Interview Info</h2>
+        <p>Content placeholder</p>
+        <h2>Demo</h2>
+        <p>Content placeholder</p>
+    </div>
+
+    <!--visual art page-->
+    <div id="page-visual" style="display:none">
+        <a href="#" onclick="showPage('home')">Back to Home</a>
+        <h1>Visual Art</h1>
+        <h2>Q&A</h2>
+        <p>Content placeholder</p>
+        <h2>Interview Info</h2>
+        <p>Content placeholder</p>
+        <h2>Demo</h2>
+        <p>Content placeholder</p>
+    </div>
+
+    <!--music page-->
+    <div id="page-music" style="display:none">
+        <a href="#" onclick="showPage('home')">Back to Home</a>
+        <h1>Music</h1>
+        <h2>Q&A</h2>
+        <p>Content placeholder</p>
+        <h2>Interview Info</h2>
+        <p>Content placeholder</p>
+        <h2>Demo</h2>
+        <p>Content placeholder</p>
+    </div>
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll('div[id^="page-"]').forEach(p => p.style.display = 'none');
+            document.getElementById('page-' + id).style.display = 'block';
+        }
+    </script>
+
+
+</body>
+</html>

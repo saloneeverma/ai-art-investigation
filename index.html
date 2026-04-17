@@ -176,6 +176,53 @@
       color: #d6c7c8;
       margin: 0;
     }
+
+    /* ── Turing Test CTA ── */
+    .turing-section {
+      margin-top: 56px;
+      border-top: 1px solid #2e0305;
+      padding-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .turing-section-text p.section-label {
+      margin-bottom: 8px;
+    }
+
+    .turing-section-text h2 {
+      font-size: 28px;
+      margin: 0 0 8px;
+    }
+
+    .turing-section-text p.turing-desc {
+      font-size: 13px;
+      color: #888;
+      margin: 0;
+    }
+
+    .turing-btn {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #d6c7c8;
+      background-color: #210204;
+      border: 1px solid #d6c7c8;
+      padding: 14px 28px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: background-color 0.15s, color 0.15s;
+    }
+
+    .turing-btn:hover {
+      background-color: #d6c7c8;
+      color: #210204;
+      text-decoration: none;
+    }
   </style>
  
 </head>
@@ -216,6 +263,18 @@
                     <span class="card-arrow">Explore →</span>
                 </div>
             </div>
+
+            <!-- ── Turing Test CTA ── -->
+            <div class="turing-section">
+              <div class="turing-section-text">
+                <p class="section-label">Try it yourself</p>
+                <h2>The AI Art Turing Test</h2>
+                <p class="turing-desc">Can you tell the difference between human and AI-generated art?</p>
+              </div>
+              <a class="turing-btn" href="https://ai-art-turing-test.com/" target="_blank" rel="noopener">Try the demo! →</a>
+            </div>
+            <!-- ── End Turing Test CTA ── -->
+
         </div>
     </div>
     <!-- END OF HOME PAGE -->
@@ -298,4 +357,3 @@
  
 </body>
 </html>
- 

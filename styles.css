@@ -13,11 +13,15 @@ h1, h2 {
 
 a {
     color:#d6c7c8;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:hover {
     text-decoration: wavy;
+}
+
+p{
+margin: 0 0 10px 0;
 }
 
 /*nav bar styles*/

@@ -24,7 +24,34 @@
                 <h1>Is AI Art "Real" Art?</h1>
                 <p>An exploration of AI-generated poetry, visual art, and music, through the lens of budding computer scientists and lovers of art.</p>
             </div>
- 
+
+            <!-- Dialogue Tree -->
+
+            <div id="dialogue-tree">
+              <!-- Q1 -->
+              <div class="question" id="q1">
+                  <p>Do you think AI can produce "real" art?</p>
+                  <button class="dialogue-button" type="button" onclick="answer('q1','yes')" >Yes</button> <br/>
+                  <button type="button" onclick="answer('q1','no')" class="dialogue-button">No</button>
+              </div>
+
+              <!-- Q2A: if Q1 = yes -->
+              <div class="question" id="q2-yes" style="display:none;">
+                  <p>What makes it real art to you?</p>
+                  <button type="button" onclick="answer('q2-yes','emotion')" class="dialogue-button">It evokes emotion and beauty</button> <br/>
+                  <button type="button" onclick="answer('q2-yes','skill')" class="dialogue-button">It has skill and complexity</button>
+              </div>
+
+              <!-- Q2B: if Q1 = no -->
+              <div class="question" id="q2-no" style="display:none;">
+                  <p>What do you think is lacking from AI art?</p>
+                  <button type="button" onclick="answer('q2-no','effort')" class="dialogue-button">True effort</button> <br/>
+                  <button type="button" onclick="answer('q2-no','intent')" class="dialogue-button">Human intent and experience</button>
+              </div>
+            </div>
+            
+
+            <!-- Bottom Links -->
             <p class="section-label">Explore our three kinds of art.</p>
  
             <div class="card-grid">
@@ -151,6 +178,24 @@
             document.getElementById('page-' + id).style.display = 'block';
         }
     </script>
- 
+
+    <!-- Script for dialogue tree -->
+    <script>
+      function answer(currentId, choice) {
+          // hide current question
+          // document.getElementById(currentId).style.display = 'none';
+
+          // simple branching
+          if (currentId === 'q1') {
+              if (choice === 'yes') {
+                  document.getElementById('q2-yes').style.display = 'block';
+                  document.getElementById('q2-no').style.display = 'none';
+              } else {
+                  document.getElementById('q2-no').style.display = 'block';
+                  document.getElementById('q2-yes').style.display = 'none';
+              }
+          } 
+      }
+    </script>
 </body>
 </html>

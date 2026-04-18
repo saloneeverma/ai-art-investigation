@@ -214,3 +214,21 @@ nav a:hover {
   color: #210204;
   text-decoration: none;
 }
+
+.dialogue-button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    background-color: #210204;
+    text-decoration: none;
+    color:#d6c7c8;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    margin: 0 0 8px;
+    cursor: pointer;
+}
+
+#dialogue-tree {
+    margin: 0 0 50px;
+}
+

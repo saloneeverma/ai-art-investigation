@@ -236,3 +236,106 @@ nav a:hover {
     margin: 0 0 50px;
 }
 
+
+/* ── Interview Analysis Section ── */
+.analysis-section {
+  margin-top: 56px;
+  border-top: 1px solid #2e0305;
+  padding-top: 40px;
+}
+
+.analysis-header {
+  margin-bottom: 32px;
+}
+
+.analysis-header h2 {
+  font-size: 28px;
+  margin: 0 0 6px;
+}
+
+.analysis-subhead {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.analysis-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: #2e0305;
+  border: 1px solid #2e0305;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.stat-block {
+  background-color: #210204;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  color: #d6c7c8;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  line-height: 1.4;
+}
+
+.analysis-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.analysis-block {
+  border-top: 1px solid #210204;
+  padding: 28px 0;
+}
+
+.analysis-block h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0 0 12px;
+  color: #d6c7c8;
+}
+
+.analysis-block p {
+  font-size: 13px;
+  color: #d6c7c8;
+  margin: 0 0 10px;
+}
+
+.analysis-block p:last-child {
+  margin-bottom: 0;
+}
+
+.theme-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.theme-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #d6c7c8;
+  background-color: #210204;
+  border: 1px solid #2e0305;
+  padding: 6px 12px;
+  border-radius: 3px;
+}

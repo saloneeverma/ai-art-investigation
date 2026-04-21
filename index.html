@@ -48,6 +48,16 @@
                   <button type="button" onclick="answer('q2-no','effort')" class="dialogue-button">True effort</button> <br/>
                   <button type="button" onclick="answer('q2-no','intent')" class="dialogue-button">Human intent and experience</button>
               </div>
+
+                <!-- Answer -> Human experience -->
+                <div class="answer" id="q2b-human" style="display:none;">
+                    <i>AI art lacks human experience.</i> <br/>
+                    <h3>Explore Perspectives:</h3>
+                    <div><p>"I am often told ... about soul in music. But I
+                        look at the notes on the page and listen to the music the performers play from those notes and I am struck by a single,
+                        clear and resonant thought: <strong>the soul I hear, if indeed I hear one, is my own."</strong> -David Cope</p></div>
+                        <a class="explore-link" href="#">Explore →</a>
+                    </div>
             </div>
             
 
@@ -243,6 +253,10 @@
                   document.getElementById('q2-no').style.display = 'block';
                   document.getElementById('q2-yes').style.display = 'none';
               }
+          } 
+          if (currentId === 'q2-no') {
+                  document.getElementById('q2b-human').style.display = 'block';
+                  document.getElementById('q2-yes').style.display = 'none';
           } 
       }
     </script>

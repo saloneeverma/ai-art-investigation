@@ -12,7 +12,8 @@
         <a href="#" onclick="showPage('home')">Home</a> |
         <a href="#" onclick="showPage('poetry')">Poetry</a> |
         <a href="#" onclick="showPage('visual')">Visual Art</a> |
-        <a href="#" onclick="showPage('music')">Music</a>
+        <a href="#" onclick="showPage('music')">Music</a> |
+        <a href="#" onclick="showPage('analysis')">Interview Analysis</a>
     </nav>
  
     <hr>
@@ -93,7 +94,16 @@
             </div>
             <!-- ── End Turing Test CTA ── -->
 
-            <iframe src="https://docs.google.com/document/d/e/2PACX-1vS9e4xZg5fNIY6D6j3_fSK6j0Rb7_rnOgsEpqywp0vHVsAk9X7K_xLyicLcKSiYoJx8xsBor7wOVksx/pub?embedded=true" width="100%" height="600px" style="border: none; margin-top: 40px;"></iframe>
+            <!-- ── Interview Analysis CTA ── -->
+            <div class="turing-section">
+              <div class="turing-section-text">
+                <p class="section-label">Research &amp; Findings</p>
+                <h2>Interview Analysis</h2>
+                <p class="turing-desc">Insights from 11 interviews on AI art, authenticity, and the human element.</p>
+              </div>
+              <a class="turing-btn" href="#" onclick="showPage('analysis')">Read the Analysis →</a>
+            </div>
+            <!-- ── End Interview Analysis CTA ── -->
 
         </div>
     </div>
@@ -234,6 +244,141 @@
         </div>
     </div>
  
+    <!-- INTERVIEW ANALYSIS PAGE -->
+    <div id="page-analysis" style="display:none">
+        <div class="page-content">
+            <a class="back-link" href="#" onclick="showPage('home')">← Back</a>
+            <div class="section-header">
+                <p class="section-num">Research</p>
+                <h1>Interview Analysis</h1>
+            </div>
+
+            <!-- Stats row -->
+            <div class="analysis-stats">
+                <div class="stat-block">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Interviews Conducted</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">81.8%</span>
+                    <span class="stat-label">Student Respondents</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">63.6%</span>
+                    <span class="stat-label">Changed Thinking After Activity</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">60%</span>
+                    <span class="stat-label">Mean Accuracy on 50-Image Test</span>
+                </div>
+            </div>
+
+            <!-- Executive Summary -->
+            <div class="section-block">
+                <h2>Executive Summary</h2>
+                <p>Every participant reported using AI tools in some form, and nearly half described daily or near-daily use. Even so, opinions about AI art remained deeply divided: 4 participants said AI can produce real art, 4 said no, and 3 gave a conditional or mixed answer.</p>
+                <br>
+                <p>The strongest pattern across the interviews was a separation between classification and value. Several participants were willing to call AI output "art" in a broad sense, but still valued human-made work more because of intention, effort, backstory, craftsmanship, or emotional depth.</p>
+                <br>
+                <p>The identification activity reduced confidence more often than it increased it. Of the 10 interviews that stated pre-activity confidence, 5 were low, 4 were medium, and only 1 was high. After the activity, 7 of 11 participants said the conversation changed their thinking — usually by making them more skeptical of their ability to spot AI reliably.</p>
+                <br>
+                <p>Where numeric activity results were recorded, performance was mixed rather than dominant. Recorded percentiles ranged from the 9th to the 70th percentile, and the three transcripts with raw scores averaged 60.0% accuracy on the 50-image test.</p>
+            </div>
+
+            <!-- Metric Summary -->
+            <div class="section-block">
+                <h2>Metric Summary</h2>
+                <div class="analysis-body">
+                    <div class="analysis-block">
+                        <h3>Age Range: 20–60</h3>
+                        <p>The sample was mostly college-aged, but also included two older non-student participants.</p>
+                    </div>
+                    <div class="analysis-block">
+                        <h3>AI Tool Use: 11 of 11</h3>
+                        <p>AI use was universal in the sample. 45.5% described daily or near-daily use — yet frequent AI use did not automatically translate into higher trust in AI art.</p>
+                    </div>
+                    <div class="analysis-block">
+                        <h3>Belief Split: 36.4% Yes / 36.4% No / 27.3% Conditional</h3>
+                        <p>The sample was split almost evenly between yes, no, and conditional positions on whether AI can make "real art."</p>
+                    </div>
+                    <div class="analysis-block">
+                        <h3>Pre-Activity Confidence: 50% Low</h3>
+                        <p>Many respondents already doubted their ability to tell AI from human work before the activity even began.</p>
+                    </div>
+                    <div class="analysis-block">
+                        <h3>Activity Performance: Mean 41.3rd Percentile</h3>
+                        <p>Available test outcomes show mixed performance across participants, not clear mastery. Among the three transcripts with raw scores, accuracy averaged 60.0%.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interpretive Write-up -->
+            <div class="section-block">
+                <h2>Interpretive Write-Up</h2>
+                <p>The interviews show a clear tension between everyday AI use and resistance to AI authorship. Participants used AI for studying, writing, coding, summarizing, recipes, trip planning, or image generation — yet many still treated art as a specifically human domain. The strongest recurring language centered on the "human element": respondents repeatedly described art as tied to soul, struggle, effort, backstory, craftsmanship, or emotional truth.</p>
+                <br>
+                <p>At the same time, the interviews also show that people do not draw a simple line between "art" and "not art." Several participants accepted that AI output can count as art in a broad category sense, especially when someone prompts, directs, or iterates on the result. But even many of those respondents still valued it differently. In practice, the question was not only whether AI output qualifies as art, but whether it deserves the same cultural value as human-made work.</p>
+                <br>
+                <p>The identification activity pushed participants away from certainty. Many expected texture, brushstrokes, flawed anatomy, shadows, or a vaguely "computeristic" feel to expose AI. Instead, several participants described being fooled by pieces they were sure were human. This matters because the interviews suggest that the social meaning of AI art is now shifting from simple detection to trust, labeling, and context.</p>
+                <br>
+                <p>Another important pattern is that authorship changed the interpretation. When participants learned that a beautiful work was AI-generated, they often said the image felt flatter, less meaningful, or less worthy of deep analysis. When they learned a work was human-made, they often immediately restored value through labor, biography, history, or intention. This suggests that in this sample, authorship actively shapes how viewers decide whether a work deserves attention, emotion, or respect.</p>
+                <br>
+                <p>Overall, the interviews point to a strong class theme for AI & Humanity: people are not just evaluating outputs — they are evaluating relationships. The participants kept returning to who made the work, what process produced it, how much effort was involved, and whether human originality is being displaced. The debate over AI art in this sample is less about surface quality alone and more about authenticity, attribution, and what kinds of creative labor people want society to value.</p>
+            </div>
+
+            <!-- Themes -->
+            <div class="section-block">
+                <h2>Dominant Themes</h2>
+                <p>The following themes were coded across all interviews (multi-select; one interview can contribute to several themes).</p>
+                <div class="theme-list" style="margin-top:16px;">
+                    <span class="theme-tag">Human Authenticity Matters</span>
+                    <span class="theme-tag">Detection Harder Than Expected</span>
+                    <span class="theme-tag">AI as a Useful Tool</span>
+                    <span class="theme-tag">Curiosity About Future Possibilities</span>
+                    <span class="theme-tag">Desire for Labeling or Regulation</span>
+                    <span class="theme-tag">Concern About IP &amp; Economic Harm to Artists</span>
+                </div>
+            </div>
+
+            <!-- Methodology -->
+            <div class="section-block">
+                <h2>Method &amp; Coding Approach</h2>
+                <p>The semi-structured interviews were converted into a coded dataset so responses could be compared consistently across participants. Each participant was coded on background characteristics, AI usage frequency, whether they believed AI can produce real art, pre-activity confidence, post-activity change, activity results when available, and recurring themes.</p>
+                <br>
+                <p>Because the interview format was qualitative, not every transcript included the same level of detail — some metrics use smaller denominators. For example, pre-activity confidence was explicitly stated in 10 of the 11 interviews, and percentile results were only reported in 4 interviews. Theme counts are multi-select researcher codes, meaning one interview can contribute to several themes at once.</p>
+            </div>
+
+            <!-- Appendix -->
+            <div class="section-block">
+                <h2>Appendix: Coding Scheme</h2>
+                <div class="analysis-body">
+                    <div class="analysis-block">
+                        <h3>Identity</h3>
+                        <p>Artist / Art enjoyer / Both / Neither-mixed</p>
+                    </div>
+                    <div class="analysis-block">
+                        <h3>AI Use Frequency</h3>
+                        <p>Daily-near-daily / Several times a week / Weekly-occasional / Uses but frequency unspecified</p>
+                    </div>
+                    <div class="analysis-block">
+                        <h3>AI Can Produce Real Art</h3>
+                        <p>Yes / No / Conditional</p>
+                    </div>
+                    <div class="analysis-block">
+                        <h3>Pre-Activity Confidence</h3>
+                        <p>Low / Medium / High</p>
+                    </div>
+                    <div class="analysis-block">
+                        <h3>Post-Activity Change</h3>
+                        <p>Yes / No / Mixed-unclear</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END OF INTERVIEW ANALYSIS PAGE -->
+
     <script>
         function showPage(id) {
             document.querySelectorAll('div[id^="page-"]').forEach(p => p.style.display = 'none');

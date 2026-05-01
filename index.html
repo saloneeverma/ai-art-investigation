@@ -13,7 +13,8 @@
         <a href="#" onclick="showPage('poetry')">Poetry</a> |
         <a href="#" onclick="showPage('visual')">Visual Art</a> |
         <a href="#" onclick="showPage('music')">Music</a> |
-        <a href="#" onclick="showPage('analysis')">Interview Analysis</a>
+        <a href="#" onclick="showPage('analysis')">Interview Analysis</a> |
+        <a href="#" onclick="showPage('turing')">Turing Test</a>
     </nav>
  
     <hr>
@@ -90,7 +91,7 @@
                 <h2>The AI Art Turing Test</h2>
                 <p class="turing-desc">Can you tell the difference between human and AI-generated art?</p>
               </div>
-              <a class="turing-btn" href="https://ai-art-turing-test.com/" target="_blank" rel="noopener">Try the demo! →</a>
+              <a class="turing-btn" href="#" onclick="showPage('turing')">Try the quiz! →</a>
             </div>
             <!-- ── End Turing Test CTA ── -->
 
@@ -407,6 +408,329 @@
                   document.getElementById('q2-yes').style.display = 'none';
           } 
       }
+    </script>
+
+
+    <!-- TURING TEST PAGE -->
+    <div id="page-turing" style="display:none">
+        <div class="page-content">
+            <a class="back-link" href="#" onclick="showPage('home')">← Back</a>
+            <div class="section-header">
+                <p class="section-num">Mini Quiz</p>
+                <h1>The AI Art Turing Test</h1>
+            </div>
+
+            <div class="section-block" style="border-top:none; padding-top:0;">
+                <p>Six artworks are shown below. For each one, guess whether it was made by a <strong>human</strong> or by <strong>AI</strong>. Click a button to reveal whether you're right! All images are from Scott Alexander's AI Art dataset.</p>
+            </div>
+
+            <!-- Score bar -->
+            <div class="turing-score-bar">
+                <span class="section-label" style="margin:0;">Your score</span>
+                <span class="turing-score-display"><span id="turing-correct">0</span> / <span id="turing-total">0</span> answered</span>
+            </div>
+
+            <!-- Quiz cards -->
+            <div class="turing-quiz-grid" id="turing-quiz">
+
+                <!-- Image 1: turing1.png → Human -->
+                <div class="turing-card" id="tcard-1">
+                    <div class="turing-img-wrap">
+                        <img src="turing1.png" alt="Artwork 1" class="turing-img">
+                        <span class="turing-img-num">01</span>
+                    </div>
+                    <p class="turing-question">Human or AI?</p>
+                    <div class="turing-btn-row">
+                        <button class="turing-choice-btn" onclick="turingGuess(1, 'Human', 'Human')">Human</button>
+                        <button class="turing-choice-btn" onclick="turingGuess(1, 'AI', 'Human')">AI</button>
+                    </div>
+                    <div class="turing-result" id="tresult-1"></div>
+                </div>
+
+                <!-- Image 2: turing2.png → AI -->
+                <div class="turing-card" id="tcard-2">
+                    <div class="turing-img-wrap">
+                        <img src="turing2.png" alt="Artwork 2" class="turing-img">
+                        <span class="turing-img-num">02</span>
+                    </div>
+                    <p class="turing-question">Human or AI?</p>
+                    <div class="turing-btn-row">
+                        <button class="turing-choice-btn" onclick="turingGuess(2, 'Human', 'AI')">Human</button>
+                        <button class="turing-choice-btn" onclick="turingGuess(2, 'AI', 'AI')">AI</button>
+                    </div>
+                    <div class="turing-result" id="tresult-2"></div>
+                </div>
+
+                <!-- Image 3: turing3.png → Human -->
+                <div class="turing-card" id="tcard-3">
+                    <div class="turing-img-wrap">
+                        <img src="turing3.png" alt="Artwork 3" class="turing-img">
+                        <span class="turing-img-num">03</span>
+                    </div>
+                    <p class="turing-question">Human or AI?</p>
+                    <div class="turing-btn-row">
+                        <button class="turing-choice-btn" onclick="turingGuess(3, 'Human', 'Human')">Human</button>
+                        <button class="turing-choice-btn" onclick="turingGuess(3, 'AI', 'Human')">AI</button>
+                    </div>
+                    <div class="turing-result" id="tresult-3"></div>
+                </div>
+
+                <!-- Image 4: turing4.png → Human -->
+                <div class="turing-card" id="tcard-4">
+                    <div class="turing-img-wrap">
+                        <img src="turing4.png" alt="Artwork 4" class="turing-img">
+                        <span class="turing-img-num">04</span>
+                    </div>
+                    <p class="turing-question">Human or AI?</p>
+                    <div class="turing-btn-row">
+                        <button class="turing-choice-btn" onclick="turingGuess(4, 'Human', 'Human')">Human</button>
+                        <button class="turing-choice-btn" onclick="turingGuess(4, 'AI', 'Human')">AI</button>
+                    </div>
+                    <div class="turing-result" id="tresult-4"></div>
+                </div>
+
+                <!-- Image 5: turing5.png → Human -->
+                <div class="turing-card" id="tcard-5">
+                    <div class="turing-img-wrap">
+                        <img src="turing5.png" alt="Artwork 5" class="turing-img">
+                        <span class="turing-img-num">05</span>
+                    </div>
+                    <p class="turing-question">Human or AI?</p>
+                    <div class="turing-btn-row">
+                        <button class="turing-choice-btn" onclick="turingGuess(5, 'Human', 'Human')">Human</button>
+                        <button class="turing-choice-btn" onclick="turingGuess(5, 'AI', 'Human')">AI</button>
+                    </div>
+                    <div class="turing-result" id="tresult-5"></div>
+                </div>
+
+                <!-- Image 6: turing6.png → AI -->
+                <div class="turing-card" id="tcard-6">
+                    <div class="turing-img-wrap">
+                        <img src="turing6.png" alt="Artwork 6" class="turing-img">
+                        <span class="turing-img-num">06</span>
+                    </div>
+                    <p class="turing-question">Human or AI?</p>
+                    <div class="turing-btn-row">
+                        <button class="turing-choice-btn" onclick="turingGuess(6, 'Human', 'AI')">Human</button>
+                        <button class="turing-choice-btn" onclick="turingGuess(6, 'AI', 'AI')">AI</button>
+                    </div>
+                    <div class="turing-result" id="tresult-6"></div>
+                </div>
+
+            </div><!-- end turing-quiz-grid -->
+
+            <!-- Final score reveal (hidden until all 6 answered) -->
+            <div class="turing-final" id="turing-final" style="display:none">
+                <p class="section-label">Final score</p>
+                <h2 id="turing-final-score"></h2>
+                <p id="turing-final-msg" class="turing-desc" style="color:#888;"></p>
+                <button class="turing-btn" style="margin-top:24px; cursor:pointer;" onclick="turingReset()">Try Again →</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- END OF TURING TEST PAGE -->
+
+    <style>
+        /* ── Turing Quiz Layout ── */
+        .turing-score-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background-color: #210204;
+            border-radius: 6px;
+            margin-bottom: 32px;
+        }
+        .turing-score-display {
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            color: #d6c7c8;
+        }
+
+        .turing-quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .turing-card {
+            background-color: #210204;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .turing-img-wrap {
+            position: relative;
+        }
+        .turing-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+        .turing-img-num {
+            position: absolute;
+            top: 10px;
+            left: 12px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #d6c7c8;
+            background: rgba(33,2,4,0.75);
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+
+        .turing-question {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 16px 20px 10px;
+        }
+
+        .turing-btn-row {
+            display: flex;
+            gap: 10px;
+            padding: 0 20px 16px;
+        }
+        .turing-choice-btn {
+            flex: 1;
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #d6c7c8;
+            background-color: #2e0305;
+            border: 1px solid #470408;
+            padding: 10px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.15s, color 0.15s;
+        }
+        .turing-choice-btn:hover:not(:disabled) {
+            background-color: #470408;
+        }
+        .turing-choice-btn:disabled {
+            cursor: default;
+            opacity: 0.5;
+        }
+        .turing-choice-btn.selected-correct {
+            background-color: #1a3d1a;
+            border-color: #4caf50;
+            color: #a8e6a8;
+            opacity: 1;
+        }
+        .turing-choice-btn.selected-wrong {
+            background-color: #3d1a1a;
+            border-color: #c0392b;
+            color: #e8a8a8;
+            opacity: 1;
+        }
+
+        .turing-result {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0 20px 20px;
+            min-height: 20px;
+        }
+        .turing-result.correct {
+            color: #4caf50;
+        }
+        .turing-result.wrong {
+            color: #c0392b;
+        }
+
+        .turing-final {
+            border-top: 1px solid #2e0305;
+            padding-top: 40px;
+            margin-top: 8px;
+        }
+        .turing-final h2 {
+            font-size: 40px;
+            margin: 6px 0 12px;
+        }
+    </style>
+
+    <script>
+        /* ── Turing Test Quiz Logic ── */
+        const turingAnswered = {};   // id → true/false (correct?)
+        const TURING_TOTAL = 6;
+
+        function turingGuess(id, guess, correct) {
+            // Only allow one answer per card
+            if (turingAnswered[id] !== undefined) return;
+
+            const isCorrect = (guess === correct);
+            turingAnswered[id] = isCorrect;
+
+            // Style the buttons
+            const card = document.getElementById('tcard-' + id);
+            const btns = card.querySelectorAll('.turing-choice-btn');
+            btns.forEach(btn => {
+                btn.disabled = true;
+                const btnLabel = btn.textContent.trim();
+                if (btnLabel === guess) {
+                    btn.classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
+                }
+            });
+
+            // Show result text
+            const resultEl = document.getElementById('tresult-' + id);
+            if (isCorrect) {
+                resultEl.textContent = '✓ Correct! This is ' + correct + '-made.';
+                resultEl.className = 'turing-result correct';
+            } else {
+                resultEl.textContent = '✗ Incorrect — this is actually ' + correct + '-made.';
+                resultEl.className = 'turing-result wrong';
+            }
+
+            // Update live score
+            const numAnswered = Object.keys(turingAnswered).length;
+            const numCorrect  = Object.values(turingAnswered).filter(Boolean).length;
+            document.getElementById('turing-correct').textContent = numCorrect;
+            document.getElementById('turing-total').textContent   = numAnswered;
+
+            // Show final panel when all done
+            if (numAnswered === TURING_TOTAL) {
+                const pct = Math.round((numCorrect / TURING_TOTAL) * 100);
+                document.getElementById('turing-final-score').textContent =
+                    numCorrect + ' / ' + TURING_TOTAL + ' correct (' + pct + '%)';
+
+                let msg;
+                if (numCorrect === TURING_TOTAL)      msg = "Perfect score — you've got a sharp eye!";
+                else if (numCorrect >= 4)              msg = "Pretty good! AI is getting harder to spot.";
+                else if (numCorrect >= 2)              msg = "About average — AI art is genuinely tricky.";
+                else                                   msg = "The machines won this round. Don't worry — most people struggle too.";
+                document.getElementById('turing-final-msg').textContent = msg;
+                document.getElementById('turing-final').style.display = 'block';
+            }
+        }
+
+        function turingReset() {
+            // Clear state
+            for (const key in turingAnswered) delete turingAnswered[key];
+            document.getElementById('turing-correct').textContent = '0';
+            document.getElementById('turing-total').textContent   = '0';
+            document.getElementById('turing-final').style.display = 'none';
+
+            // Reset every card
+            for (let i = 1; i <= TURING_TOTAL; i++) {
+                const card = document.getElementById('tcard-' + i);
+                card.querySelectorAll('.turing-choice-btn').forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('selected-correct', 'selected-wrong');
+                });
+                const r = document.getElementById('tresult-' + i);
+                r.textContent = '';
+                r.className = 'turing-result';
+            }
+        }
     </script>
 </body>
 </html>

@@ -634,3 +634,52 @@ blockquote cite a:hover {
     margin: 6px 0 12px;
     color: #f0ebe3;
 }
+/* ── Home page Turing preview ── */
+.home-turing-section {
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+    padding: 48px 0 0;
+    margin-bottom: 0;
+}
+
+.home-turing-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.home-turing-header h2 {
+    font-size: 30px;
+    margin: 6px 0 0;
+    color: #f0ebe3;
+}
+
+.home-turing-score-wrap {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.home-turing-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: rgba(214,199,200,0.6);
+    line-height: 1;
+}
+
+.home-turing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background-color: rgba(255,255,255,0.06);
+    margin-bottom: 0;
+}
+
+.home-turing-footer {
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+    padding: 24px 0;
+    display: flex;
+    justify-content: flex-end;
+}

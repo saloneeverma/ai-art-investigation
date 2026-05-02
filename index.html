@@ -4,20 +4,19 @@
   <meta charset="UTF-8" />
   <title>Is AI Art "Real" Art?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
-        <a href="#" onclick="showPage('home')">Home</a> |
-        <a href="#" onclick="showPage('poetry')">Poetry</a> |
-        <a href="#" onclick="showPage('visual')">Visual Art</a> |
-        <a href="#" onclick="showPage('music')">Music</a> |
-        <a href="#" onclick="showPage('analysis')">Interview Analysis</a> |
+        <span class="nav-logo">AI Art Investigation</span>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('poetry')">Poetry</a>
+        <a href="#" onclick="showPage('visual')">Visual Art</a>
+        <a href="#" onclick="showPage('music')">Music</a>
+        <a href="#" onclick="showPage('analysis')">Interview Analysis</a>
         <a href="#" onclick="showPage('turing')">Turing Test</a>
     </nav>
- 
-    <hr>
  
     <!-- HOME PAGE -->
     <div id="page-home">
@@ -84,16 +83,70 @@
                 </div>
             </div>
 
-            <!-- ── Turing Test CTA ── -->
-            <div class="turing-section">
-              <div class="turing-section-text">
-                <p class="section-label">Try it yourself</p>
-                <h2>The AI Art Turing Test</h2>
-                <p class="turing-desc">Can you tell the difference between human and AI-generated art?</p>
-              </div>
-              <a class="turing-btn" href="#" onclick="showPage('turing')">Try the quiz! →</a>
+            <!-- ── Home Turing Preview ── -->
+            <div class="home-turing-section">
+                <div class="home-turing-header">
+                    <div>
+                        <p class="section-label">Interactive &middot; The Turing Test</p>
+                        <h2>Human or AI?</h2>
+                    </div>
+                    <div class="home-turing-score-wrap">
+                        <span class="home-turing-score" id="home-turing-score">0 / 0</span>
+                        <span class="section-label" style="margin:0;">correct</span>
+                    </div>
+                </div>
+
+                <div class="home-turing-grid">
+
+                    <!-- Card 1: turing1.png → Human -->
+                    <div class="turing-card" id="htcard-1">
+                        <div class="turing-img-wrap">
+                            <img src="turing1.png" alt="Artwork 1" class="turing-img">
+                            <span class="turing-img-num">01</span>
+                        </div>
+                        <p class="turing-question">Human or AI?</p>
+                        <div class="turing-btn-row">
+                            <button class="turing-choice-btn" onclick="homeTuringGuess(1,'Human','Human')">Human</button>
+                            <button class="turing-choice-btn" onclick="homeTuringGuess(1,'AI','Human')">AI</button>
+                        </div>
+                        <div class="turing-result" id="htresult-1"></div>
+                    </div>
+
+                    <!-- Card 2: turing2.png → AI -->
+                    <div class="turing-card" id="htcard-2">
+                        <div class="turing-img-wrap">
+                            <img src="turing2.png" alt="Artwork 2" class="turing-img">
+                            <span class="turing-img-num">02</span>
+                        </div>
+                        <p class="turing-question">Human or AI?</p>
+                        <div class="turing-btn-row">
+                            <button class="turing-choice-btn" onclick="homeTuringGuess(2,'Human','AI')">Human</button>
+                            <button class="turing-choice-btn" onclick="homeTuringGuess(2,'AI','AI')">AI</button>
+                        </div>
+                        <div class="turing-result" id="htresult-2"></div>
+                    </div>
+
+                    <!-- Card 3: turing3.png → Human -->
+                    <div class="turing-card" id="htcard-3">
+                        <div class="turing-img-wrap">
+                            <img src="turing3.png" alt="Artwork 3" class="turing-img">
+                            <span class="turing-img-num">03</span>
+                        </div>
+                        <p class="turing-question">Human or AI?</p>
+                        <div class="turing-btn-row">
+                            <button class="turing-choice-btn" onclick="homeTuringGuess(3,'Human','Human')">Human</button>
+                            <button class="turing-choice-btn" onclick="homeTuringGuess(3,'AI','Human')">AI</button>
+                        </div>
+                        <div class="turing-result" id="htresult-3"></div>
+                    </div>
+
+                </div>
+
+                <div class="home-turing-footer">
+                    <a class="turing-btn" href="#" onclick="showPage('turing')">See all 6 artworks &rarr;</a>
+                </div>
             </div>
-            <!-- ── End Turing Test CTA ── -->
+            <!-- ── End Home Turing Preview ── -->
 
             <!-- ── Interview Analysis CTA ── -->
             <div class="turing-section">
@@ -565,7 +618,7 @@
             margin-bottom: 32px;
         }
         .turing-score-display {
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 20px;
             color: #d6c7c8;
         }
@@ -622,7 +675,8 @@
         }
         .turing-choice-btn {
             flex: 1;
-            font-family: 'DM Mono', monospace;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -755,4 +809,31 @@
         }
     </script>
 </body>
-</html>
+</html><script>
+    /* ── Home Page Turing Preview Logic ── */
+    const homeTuringAnswered = {};
+
+    function homeTuringGuess(id, guess, correct) {
+        if (homeTuringAnswered[id] !== undefined) return;
+        const isCorrect = (guess === correct);
+        homeTuringAnswered[id] = isCorrect;
+
+        const card = document.getElementById('htcard-' + id);
+        card.querySelectorAll('.turing-choice-btn').forEach(btn => {
+            btn.disabled = true;
+            if (btn.textContent.trim() === guess) {
+                btn.classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
+            }
+        });
+
+        const resultEl = document.getElementById('htresult-' + id);
+        resultEl.textContent = isCorrect
+            ? '\u2713 Correct! This is ' + correct + '-made.'
+            : '\u2717 Incorrect \u2014 this is actually ' + correct + '-made.';
+        resultEl.className = 'turing-result ' + (isCorrect ? 'correct' : 'wrong');
+
+        const numAnswered = Object.keys(homeTuringAnswered).length;
+        const numCorrect  = Object.values(homeTuringAnswered).filter(Boolean).length;
+        document.getElementById('home-turing-score').textContent = numCorrect + ' / ' + numAnswered;
+    }
+</script>

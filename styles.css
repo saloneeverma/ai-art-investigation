@@ -634,6 +634,101 @@ blockquote cite a:hover {
     margin: 6px 0 12px;
     color: #f0ebe3;
 }
+/* ── Subsection Cards (h3 blocks within Background sections) ── */
+.subsection-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 32px;
+    background-color: rgba(255,255,255,0.06);
+}
+
+.subsection-card {
+    background-color: #210204;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: background 0.25s;
+}
+
+.subsection-card:hover {
+    background-color: rgba(255,255,255,0.02);
+}
+
+.subsection-card-num {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(214,199,200,0.25);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 4px;
+}
+
+h3.subsection-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f0ebe3;
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0 0 8px;
+}
+
+.subsection-card p {
+    font-size: 13.5px;
+    color: rgba(214,199,200,0.68);
+    line-height: 1.75;
+    font-weight: 400;
+    margin: 0;
+}
+
+.subsection-card p + p {
+    margin-top: 12px;
+}
+
+.subsection-card a {
+    color: rgba(214,199,200,0.6);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.subsection-card a:hover {
+    color: #f0ebe3;
+}
+
+.card-extra {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.card-extra.open {
+    display: flex;
+}
+
+.read-more-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(214,199,200,0.4);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.read-more-btn:hover {
+    color: rgba(214,199,200,0.85);
+}
+
 /* ── Home page Turing preview ── */
 .home-turing-section {
     border-top: 0.5px solid rgba(255,255,255,0.08);

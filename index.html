@@ -4,20 +4,19 @@
   <meta charset="UTF-8" />
   <title>Is AI Art "Real" Art?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
-        <a href="#" onclick="showPage('home')">Home</a> |
-        <a href="#" onclick="showPage('poetry')">Poetry</a> |
-        <a href="#" onclick="showPage('visual')">Visual Art</a> |
-        <a href="#" onclick="showPage('music')">Music</a> |
-        <a href="#" onclick="showPage('analysis')">Interview Analysis</a> |
+        <span class="nav-logo">AI Art Investigation</span>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('poetry')">Poetry</a>
+        <a href="#" onclick="showPage('visual')">Visual Art</a>
+        <a href="#" onclick="showPage('music')">Music</a>
+        <a href="#" onclick="showPage('analysis')">Interview Analysis</a>
         <a href="#" onclick="showPage('turing')">Turing Test</a>
     </nav>
- 
-    <hr>
  
     <!-- HOME PAGE -->
     <div id="page-home">
@@ -565,7 +564,7 @@
             margin-bottom: 32px;
         }
         .turing-score-display {
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 20px;
             color: #d6c7c8;
         }
@@ -622,7 +621,8 @@
         }
         .turing-choice-btn {
             flex: 1;
-            font-family: 'DM Mono', monospace;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.1em;

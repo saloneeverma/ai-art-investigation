@@ -344,3 +344,41 @@ nav a:hover {
   padding: 6px 12px;
   border-radius: 3px;
 }
+
+/* ── Pull Quotes ── */
+blockquote {
+  position: relative;
+  margin: 28px 0;
+  padding: 20px 24px 20px 28px;
+  border-left: 2px solid #d6c7c8;
+  background-color: #210204;
+  border-radius: 0 4px 4px 0;
+}
+
+blockquote p {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #d6c7c8;
+  margin: 0 0 10px !important;
+}
+
+blockquote cite {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-style: normal;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-top: 12px;
+}
+
+blockquote cite a {
+  color: #888;
+}
+
+blockquote cite a:hover {
+  color: #d6c7c8;
+}
